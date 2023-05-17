@@ -52,9 +52,21 @@ namespace testDB_using_ado
                         //InsertDataUserIP();
 
 
-                        CrudOpration insert = new CrudOpration();
-                        insert.Add();
+                        var newEmployee = new Employee()
+                        {
+                            FirstName = "Pranaya",
+                            MiddleName = "J",
+                            LastName = "Rout",
+                            EmpCode = 12,
+                            Gender = 1,
+                            DOB = DateTime.Now,
+                            salary = 54166,
+                            JoiningDate = DateTime.Now,
+                            ResignDate = DateTime.Now,
 
+                        };
+                        CrudOpration insert = new CrudOpration();
+                        insert.Add(newEmployee);
                         break;
 
                     case crud.update:

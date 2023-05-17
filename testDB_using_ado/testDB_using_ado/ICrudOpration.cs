@@ -9,7 +9,7 @@ namespace testDB_using_ado
 {
     internal interface ICrudOpration
     {
-        void Add();
+        void Add(Employee employee);
 
        // void Add(string FirstName, string MiddleName, string LastName, int EmpCode, Gender gender, DateTime DOB, int salary, DateTime JoiningDate, DateTime ResignDate);
 

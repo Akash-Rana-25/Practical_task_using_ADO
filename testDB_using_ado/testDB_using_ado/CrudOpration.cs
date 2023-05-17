@@ -23,31 +23,31 @@ namespace testDB_using_ado
 
         //public void Add(string FirstName, string MiddleName, string LastName, int EmpCode, ender gender, DateTime DOB, int salary, DateTime JoiningDate, DateTime ResignDate)
 
-        public void Add()
+        public void Add(Employee employee)
         {
          
 
             using (SqlConnection connection = new SqlConnection(ConString))
             {
-                //string sqlText = @"INSERT INTO Employee VALUES (@FirstName,@MiddleName,@LastName,@EmpCode,@gender,@DOB,@salary,@JoiningDate,@ResignDate);";
-                //SqlCommand cmd = new SqlCommand(sqlText, connection);
+                string sqlText = @"INSERT INTO Employee VALUES (@FirstName,@MiddleName,@LastName,@EmpCode,@gender,@DOB,@salary,@JoiningDate,@ResignDate);";
+                SqlCommand cmd = new SqlCommand(sqlText, connection);
 
-                //cmd.Parameters.AddWithValue("@FirstName", FirstName);
-                //cmd.Parameters.AddWithValue("@MiddleName", MiddleName);
-                //cmd.Parameters.AddWithValue("@LastName", LastName);
-                //cmd.Parameters.AddWithValue("@EmpCode", EmpCode);
-                //cmd.Parameters.AddWithValue("@gender", gender);
-                //cmd.Parameters.AddWithValue("@DOB", DOB);
-                //cmd.Parameters.AddWithValue("@salary", salary);
-                //cmd.Parameters.AddWithValue("@JoiningDate", JoiningDate);
-                //cmd.Parameters.AddWithValue("@ResignDate", ResignDate);
-
-
+                cmd.Parameters.AddWithValue("@FirstName", employee.FirstName);
+                cmd.Parameters.AddWithValue("@MiddleName", employee.MiddleName);
+                cmd.Parameters.AddWithValue("@LastName", employee.LastName);
+                cmd.Parameters.AddWithValue("@EmpCode", employee.EmpCode);
+                cmd.Parameters.AddWithValue("@gender", employee.Gender);
+                cmd.Parameters.AddWithValue("@DOB", employee.DOB);
+                cmd.Parameters.AddWithValue("@salary", employee.salary);
+                cmd.Parameters.AddWithValue("@JoiningDate", employee.JoiningDate);
+                cmd.Parameters.AddWithValue("@ResignDate", employee.ResignDate);
 
 
 
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO Employee VALUES ('Akash','Ishwarbhai','Rana',2512,1,'1999/12/25',54166,'2023/01/02','2023/05/16');", connection);
+
+
+                //SqlCommand cmd = new SqlCommand("INSERT INTO Employee VALUES ('Akash','Ishwarbhai','Rana',2512,1,'1999/12/25',54166,'2023/01/02','2023/05/16');", connection);
 
                 try
                 {
