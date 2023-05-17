@@ -8,6 +8,7 @@ namespace testDB_using_ado
 {
     internal class Employee
     {
+        
         public int Employee_PK { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }

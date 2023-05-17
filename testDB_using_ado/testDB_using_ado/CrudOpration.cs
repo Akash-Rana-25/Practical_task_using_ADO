@@ -80,6 +80,7 @@ namespace testDB_using_ado
                 cmd.Parameters.AddWithValue("@Id", Id);
 
 
+
                 try
                 {
                     connection.Open();
@@ -105,15 +106,24 @@ namespace testDB_using_ado
                 }
             }
         }
-        public void Update(int Id) {
+        public void Update(int Id,Employee employee) {
 
             using (SqlConnection connection = new SqlConnection(ConString))
             {
 
 
 
-                SqlCommand cmd = new SqlCommand("Update Employee set FirstName='karan',MiddleName ='S',LastName ='Raj',EmpCode=1007,gender=1,salary=202020,JoiningDate='2022-01-07',ResignDate='2024-2-2' Where Employee_PK=@Id;", connection);
+                SqlCommand cmd = new SqlCommand("Update Employee set FirstName=@FirstName,MiddleName =@MiddleName,LastName =@LastName,EmpCode=@EmpCode,Gender=@gender,salary=@salary,JoiningDate=@JoiningDate,ResignDate=@ResignDate Where Employee_PK=@Id;", connection);
                 cmd.Parameters.AddWithValue("@Id", Id);
+                cmd.Parameters.AddWithValue("@FirstName", employee.FirstName);
+                cmd.Parameters.AddWithValue("@MiddleName", employee.MiddleName);
+                cmd.Parameters.AddWithValue("@LastName", employee.LastName);
+                cmd.Parameters.AddWithValue("@EmpCode", employee.EmpCode);
+                cmd.Parameters.AddWithValue("@gender", employee.Gender);
+                cmd.Parameters.AddWithValue("@DOB", employee.DOB);
+                cmd.Parameters.AddWithValue("@salary", employee.salary);
+                cmd.Parameters.AddWithValue("@JoiningDate", employee.JoiningDate);
+                cmd.Parameters.AddWithValue("@ResignDate", employee.ResignDate);
 
 
                 try

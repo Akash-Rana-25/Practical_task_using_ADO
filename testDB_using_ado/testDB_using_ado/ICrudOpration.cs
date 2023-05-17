@@ -13,7 +13,7 @@ namespace testDB_using_ado
 
        // void Add(string FirstName, string MiddleName, string LastName, int EmpCode, Gender gender, DateTime DOB, int salary, DateTime JoiningDate, DateTime ResignDate);
 
-        void Update(int Id);
+        void Update(int Id,Employee emp);
         void Delete(int Id);
         void Read();
 

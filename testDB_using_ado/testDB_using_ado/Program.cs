@@ -75,8 +75,23 @@ namespace testDB_using_ado
 
                         if (int.TryParse(Console.ReadLine(), out UpdateId))
                         {
+                            var updateEmployee = new Employee()
+                            {
+                                FirstName = "Update",
+                                MiddleName = "J",
+                                LastName = "Rout",
+                                EmpCode = 12,
+                                Gender = 1,
+                                DOB = DateTime.Now,
+                                salary = 54166,
+                                JoiningDate = DateTime.Now,
+                                ResignDate = DateTime.Now,
+
+                            };
                             CrudOpration update = new CrudOpration();
-                            update.Update(UpdateId);
+                            update.Update(UpdateId,updateEmployee);
+
+
                         }
                         else
                         {
